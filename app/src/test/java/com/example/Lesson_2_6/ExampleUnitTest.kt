@@ -1,4 +1,4 @@
-package com.example.abdykulov_almanbet_hw_62
+package com.example.Lesson_2_6
 
 import org.junit.Test
 

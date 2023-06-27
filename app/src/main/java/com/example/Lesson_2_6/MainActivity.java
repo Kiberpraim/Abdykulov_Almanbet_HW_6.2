@@ -1,4 +1,4 @@
-package com.example.abdykulov_almanbet_hw_62;
+package com.example.Lesson_2_6;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,14 +6,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 int colorOrange = Color.parseColor("#FF9800");
-                if (!edEmail.getText().toString().isEmpty() && !edPassword.getText().toString().isEmpty()){
+                if (!edEmail.getText().toString().isEmpty() && !edPassword.getText().toString().isEmpty()) {
                     btnEntry.setBackgroundColor(colorOrange);
-                }else {
+                } else {
                     btnEntry.setBackgroundColor(Color.GRAY);
                 }
             }
@@ -65,16 +62,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 int colorOrange = Color.parseColor("#FF9800");
-                if (!edEmail.getText().toString().isEmpty() && !edPassword.getText().toString().isEmpty()){
-                    btnEntry.setBackgroundColor(colorOrange);
-                }else {
+                if (edEmail.getText().toString().isEmpty() && edPassword.getText().toString().isEmpty()) {
                     btnEntry.setBackgroundColor(Color.GRAY);
+                } else {
+                    btnEntry.setBackgroundColor(colorOrange);
                 }
             }
         });
 
         btnEntry.setOnClickListener(v -> {
-            if (edEmail.getText().toString().equals( "admin") && edPassword.getText().toString().equals("admin")){
+            if (edEmail.getText().toString().equals("admin") && edPassword.getText().toString().equals("admin")) {
 
                 txEntry.animate().alpha(0);
                 txEdict.animate().alpha(0);
@@ -83,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
                 btnEntry.animate().alpha(0);
                 txClickable.animate().alpha(0);
 
-                Toast.makeText(MainActivity.this,"Вы успешно зарегистрировались.",Toast.LENGTH_LONG).show();
-            }else {
-                Toast.makeText(MainActivity.this,"Неправильный логин или пароль.",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Вы успешно зарегистрировались.", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(MainActivity.this, "Неправильный логин или пароль.", Toast.LENGTH_LONG).show();
             }
         });
     }
